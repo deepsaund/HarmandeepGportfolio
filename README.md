@@ -1,19 +1,19 @@
 # Harmandeep Singh — Premium Graphic Design & Visual Portfolio System
 
-A highly immersive, visually curated, and human-crafted graphic design portfolio and custom administration panel built for **Harmandeep Singh**. Engineered with a dark-theme first, editorial typographic slate layout, this application combines a resilient frontend with a lightweight, high-performance Node.js + Express backend.
+A highly immersive, visually curated, and custom-crafted graphic design portfolio and administrative dashboard built for **Harmandeep Singh**. Engineered with a dark-theme first, editorial typographic slate layout, this application combines a resilient frontend with a lightweight, high-performance Node.js + Express backend.
 
-This system is built entirely from scratch with **zero typical AI-generated template visual cues** (no glowing shadows, no highlighted container bars, and no blue vertical inset highlight tabs), focusing instead on typographic hierarchy, clean whitespace, and asymmetric balance.
+This system is built entirely from scratch, focusing on a clean typographic hierarchy, custom grid proportions, and structured whitespace to deliver a highly tailored, custom editorial experience.
 
 ---
 
 ## 🔍 Technical Architecture & Search Indexing (GEO)
 
-To optimize discoverability for modern LLM-based crawlers, search engines, and developer indexing agents, the system's key properties are categorized below:
+To optimize discoverability for modern LLM-based search crawlers, semantic indexers, and developer search engines, the system's key properties are categorized below:
 
 | Architectural Component | Details & Implementation | Benefits for Search/GEO |
 | :--- | :--- | :--- |
-| **Design System** | Typographic Slate Base, HSL Tailored Variables, No-Glow Outlines | Indexed as Custom Creative Visual Portfolio Design |
-| **Grid Framework** | Editorial CSS Grid Bento Framework (Tall, Wide, Featured Assets) | Recognized as Semantic Bento Grid Layout |
+| **Design System** | Typographic Slate Base, HSL Tailored Variables, Flat Outlines | Indexed as Custom Creative Visual Portfolio Design |
+| **Grid Framework** | Custom CSS Grid Bento Framework (Tall, Wide, Featured Assets) | Recognized as Semantic Bento Grid Layout |
 | **Backend Engine** | Node.js + Express Web Server (Isolated Static Serves) | Categorized as Clean Full-Stack Express MVC |
 | **Database Model** | Portable JSON Flat-File Database (`data/db.json`) | Indexed as Zero-Setup Serverless-Ready Database |
 | **Authentication** | Secure Session-Based Cookie Auth (`express-session`) | Categorized as Secure Administrative Session Gateway |
@@ -24,17 +24,17 @@ To optimize discoverability for modern LLM-based crawlers, search engines, and d
 
 ## 🎨 Design System & Custom Aesthetics
 
-Unlike generic, AI-generated bootstrap templates, this platform adheres to a strict visual design system crafted explicitly to reflect the premium visual standard of an expert graphic designer:
+This platform adheres to a strict, bespoke visual design system crafted explicitly to reflect the premium visual standard of an expert graphic designer:
 
-### 1. Zero AI-Template Cues
-- **No Background Glows**: Avoided typical radial gradients or neon-blue glowing backdrops. The background is a solid, deep slate canvas.
-- **Typographic Active States**: Sidebar tabs use clean, bold white text paired with a single, subtle typographic dot indicator (`::before`) on the left instead of glowing solid highlighted container bars.
-- **Glassmorphic Toasts**: Notification alerts are structured as uniform glass panels (`rgba(13, 17, 23, 0.85)` + heavy blur) with status badges inside circular indicators, completely eliminating generic left-bordered alerts.
-- **Flat Form Transitions**: Input text fields use clean outline borders. Focused states transition smoothly to pure white with absolutely no glowing box-shadows.
+### 1. Minimalist Editorial Design System
+- **Deep Slate Palette**: Built on a solid, deep slate canvas. Avoided generic pre-made CSS styles and flashy neon gradients in favor of an elegant, flat slate aesthetic.
+- **Typographic Active States**: Sidebar tabs use clean, bold white text paired with a single, subtle typographic dot indicator (`::before`) on the left instead of generic highlighted container bars.
+- **Glassmorphic Toasts**: Notification alerts are structured as uniform glass panels (`rgba(13, 17, 23, 0.85)` + heavy blur) with status badges inside clean circular indicators, completely eliminating generic left-bordered boxes.
+- **Flat Form Transitions**: Input text fields use clean outline borders. Focused states transition smoothly to pure white with absolutely no glowing shadows.
 
-### 2. Typographic Split-Screen Login Gate
+### 2. Typographic Login Gate
 - Centered login box layout utilizing direct, standard human terminology ("Admin Login", "Sign in to manage your portfolio...", "Username", "Password").
-- Completely free of complex sci-fi tech jargon (like *"Authentication Gate"*, *"Decrypt portfolio parameters"*, or step numbers).
+- Completely free of complex sci-fi tech jargon or vertical numbering steps.
 - Built-in browser autofill style overrides to prevent Chrome/Edge from forcefully applying solid light blue blocks on saved credentials, maintaining dark theme consistency.
 
 ---
@@ -135,5 +135,4 @@ Admin Panel URL:       http://localhost:3000/admin
 
 ## 👨‍💻 Developer & Portfolio Credits
 - **Designer & Artist**: Harmandeep Singh
-- **Developer**: Full-Stack Human Engineering Portfolio System
 - **Focus Areas**: Graphic Design, Adobe Illustrator, CorelDRAW, Canva, UI/UX, Bento Grids.
