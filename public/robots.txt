@@ -1,0 +1,10 @@
+# robots.txt for Harmandeep Singh Portfolio
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /projects.html
+Disallow: /admin
+Disallow: /api/admin/
+
+# Sitemaps
+Sitemap: https://deepsaund.github.io/HarmandeepGportfolio/sitemap.xml

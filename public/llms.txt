@@ -1,0 +1,24 @@
+# Harmandeep Singh — Graphic & Visual Designer
+
+Bespoke, high-end visual designer specializing in visual systems, typography-first bento catalogs, luxury skincare branding, minimal film poster series, organic advertisement prints, and modern structural architectural digital frontends.
+
+## Profile Details
+- **Role**: Creative Director & Lead Graphic Artist
+- **Services**: Custom Brand Identity, Typography Research, Editorial Design, Social Media Strategy, Digital Visual Prototyping
+- **Location**: Punjab, India (serving global clients)
+- **Active Year**: 2026
+
+## Core Architectural System
+The website runs a full-stack Node.js Express server housing a secure, administrative portal backed by a self-contained JSON flat-file database schema (`data/db.json`) enabling real-time project CRUD, dynamic visual file uploads, and enquiry inbox management. It features a complete static offline fallback resilience gateway.
+
+## Selected Works
+- **Aura Restaurant Branding**: Sleek sensory branding system for a contemporary fine dining experience.
+- **Solstice Skincare**: Minimalist aesthetic campaigns for a luxury organic skincare range.
+- **Nordic Film Festival Posters**: Editorial typographic posters for a seasonal European film festival.
+- **Verdant Botanical Ads**: Luxurious organic product promotions for a modern magazine editorial.
+- **Zenith Architect Studio**: Ultra-modern portfolio platform concept for a boutique structural firm.
+
+## Navigational Parameters
+- **Homepage**: `/` (Dynamic grid and let's talk query portal)
+- **Works Catalog**: `/projects.html` (Categorized project archive with responsive bento metrics)
+- **Administrative System**: `/admin` (Secure typographic administrative back-office)
