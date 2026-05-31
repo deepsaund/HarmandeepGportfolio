@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabNavigation();
   initLoginForm();
   initProjectCRUD();
+  initEnquiryInbox();
   initSystemConfig();
   initImageUploadPreview();
 });
