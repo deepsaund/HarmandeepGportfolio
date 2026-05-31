@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Harmandeep Singh - Professional Graphic Designer specializing in custom branding, print materials, social media creatives, and digital visual experiences.">
+  <meta name="keywords" content="Harmandeep Singh, Graphic Designer, Branding, Brand Identity, Social Media Design, Poster Design, Print Design, Figma, Illustrator, Photoshop">
+  <meta name="author" content="Harmandeep Singh">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Harmandeep Singh — Graphic Designer Portfolio">
+  <meta property="og:description" content="Designing visuals that people remember. Clean, premium visual systems, social media graphics, print materials, and digital experiences.">
+  <meta property="og:image" content="wede.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Harmandeep Singh — Graphic Designer Portfolio">
+  <meta property="twitter:description" content="Designing visuals that people remember. Clean, premium visual systems, social media graphics, print materials, and digital experiences.">
+  <meta property="twitter:image" content="wede.png">
+
+  <title>Harmandeep Singh — Graphic Designer</title>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- --- FLOATING RESUME FAB (Rotating Circular Text) --- -->
+  <a href="resume.pdf" class="floating-resume-fab" id="resumeFab" download aria-label="Download Resume" title="Download Resume">
+    <!-- Spinning circular text ring -->
+    <svg class="fab-rotating-text" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path id="fabCirclePath" d="M 100, 100 m -72, 0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
+      </defs>
+      <text>
+        <textPath href="#fabCirclePath" startOffset="0%">
+          DOWNLOAD &nbsp;·&nbsp; RESUME &nbsp;·&nbsp; DOWNLOAD &nbsp;·&nbsp; RESUME &nbsp;·&nbsp;
+        </textPath>
+      </text>
+    </svg>
+    <!-- Center arrow icon -->
+    <span class="fab-center-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </span>
+  </a>
+
+  <!-- --- DYNAMIC CUSTOM CURSOR LENS --- -->
+  <div class="custom-cursor-lens" id="customCursor" aria-hidden="true">
+    <div class="cursor-dot">
+      <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring">
+      <div class="cursor-ring-inner"></div>
+    </div>
+    <div class="cursor-decal-label" id="cursorDecalLabel"></div>
+  </div>
+
+  <!-- --- PRECISION LAYOUT GRID OVERLAY --- -->
+  <div class="grid-overlay-container">
+    <div class="grid-margin-marker left"></div>
+    <div class="grid-margin-marker right"></div>
+    
+    <!-- Floating Info Panel explaining Grid Mode to visitors -->
+    <div class="grid-info-panel">
+      <div class="grid-info-header">
+        <span class="grid-info-dot"></span>
+        <span class="grid-info-title">System Grid Active</span>
+      </div>
+      <div class="grid-info-body">
+        <p>This overlay exposes the underlying geometric grid system that enforces mathematical alignment, proportion, and spacing across my portfolio.</p>
+        <ul class="grid-info-legend">
+          <li><span class="legend-line margin"></span> Margin Bounds (5%)</li>
+          <li><span class="legend-line vertical"></span> Column block Gutters (80px)</li>
+          <li><span class="legend-badge">SPEC</span> CSS Type & Padding specs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- NAVIGATION HEADER --- -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo" id="navLogo">
+        Harmandeep<span>.</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link-item">About</a></li>
+          <li><a href="#services" class="nav-link-item">Services</a></li>
+          <li><a href="#work" class="nav-link-item">Selected Work</a></li>
+          <li><a href="projects.html" class="nav-link-item">Catalog ↗</a></li>
+          <li><a href="#process" class="nav-link-item">Process</a></li>
+          <li><a href="#contact" class="nav-link-item">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- HSL Brand Palette Sandbox Selector -->
+        <div class="palette-dropdown-container" id="paletteDropdown">
+          <button class="palette-select-btn" aria-label="Select Color Theme" title="Select Theme Palette">Theme</button>
+          <ul class="palette-menu" role="menu">
+            <li role="presentation">
+              <button class="palette-btn active" data-palette="slate" role="menuitem">
+                <span class="palette-dot slate"></span> Slate Blue
+              </button>
+            </li>
+            <li role="presentation">
+              <button class="palette-btn" data-palette="terracotta" role="menuitem">
+                <span class="palette-dot terracotta"></span> Terracotta
+              </button>
+            </li>
+            <li role="presentation">
+              <button class="palette-btn" data-palette="cyber" role="menuitem">
+                <span class="palette-dot cyber"></span> Cyber Neon
+              </button>
+            </li>
+            <li role="presentation">
+              <button class="palette-btn" data-palette="mint" role="menuitem">
+                <span class="palette-dot mint"></span> Forest Mint
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode" title="Toggle Mode">
+          <!-- Sun Icon SVG -->
+          <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1V3H13V1H11ZM11 21V23H13V21H11ZM3.51472 4.92893L4.92893 3.51472L6.34315 4.92893L4.92893 6.34315L3.51472 4.92893ZM17.6569 19.0711L19.0711 17.6569L20.4853 19.0711L19.0711 20.4853L17.6569 19.0711ZM1 11H3V13H1V11ZM21 11H23V13H21V11ZM3.51472 19.0711L4.92893 20.4853L6.34315 19.0711L4.92893 17.6569L3.51472 19.0711ZM17.6569 4.92893L19.0711 6.34315L20.4853 4.92893L19.0711 3.51472L17.6569 4.92893Z"/>
+          </svg>
+          <!-- Moon Icon SVG -->
+          <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C10.4503 3.0016 8.92482 3.42875 7.57502 4.23882C6.22521 5.0489 5.10183 6.21147 4.31682 7.61053C3.53181 9.00958 3.11545 10.5935 3.10915 12.2043C3.10286 13.815 3.50687 15.394 4.28093 16.7842C5.055 18.1743 6.16912 19.3248 7.51226 20.1211C8.85539 20.9174 10.3773 21.3289 11.9268 21.3146C13.4764 21.3004 14.9959 20.8609 16.3341 20.0396C17.6723 19.2184 18.78 18.0468 19.547 16.641C18.1408 17.1352 16.626 17.2285 15.1534 16.9113C13.6807 16.5941 12.3082 15.8783 11.1718 14.8348C10.0354 13.7912 9.17855 12.4602 8.68595 10.9734C8.19335 9.48658 8.08419 7.90099 8.36923 6.37299C8.65427 4.845 9.32289 3.43328 10.309 2.27702C10.8715 2.76674 11.3323 3.37688 11.6521 4.05593C11.9719 4.73499 12.1428 5.46738 12.1501 6.20894C12.1573 6.9505 12.0008 7.68378 11.6934 8.34789C11.386 9.01199 10.9351 9.59124 10.3789 10.0371C9.82273 10.4831 9.1744 10.7854 8.4878 10.9189C7.80121 11.0524 7.0924 11.0137 6.421 10.8058C6.35338 11.1993 6.32047 11.5991 6.3225 12C6.3225 15.1322 8.86778 17.6775 12 17.6775C14.7709 17.6775 17.1009 15.6881 17.5854 13.0489C18.156 13.5684 18.8284 13.9723 19.5638 14.2372C20.2991 14.5021 21.0824 14.6225 21.869 14.5915C21.6429 15.8647 21.0583 17.0427 20.1915 17.9711C19.3248 18.8996 18.2139 19.5372 16.9926 19.8021C15.7712 20.0671 14.4925 19.9479 13.3159 19.4597C12.1394 18.9715 11.115 18.136 10.3725 17.0588C9.62998 15.9816 9.19965 14.7107 9.13531 13.4072C9.07097 12.1037 9.37548 10.8252 10.0101 9.73305C10.6447 8.64094 11.5815 7.78284 12.7013 7.26693C13.8211 6.75103 15.0747 6.60012 16.297 6.8335C15.187 5.61864 13.6826 4.79252 12.023 4.4855C12.008 3.99201 12.0002 3.49755 12 3Z"/>
+          </svg>
+        </button>
+        <a href="#contact" class="btn btn-secondary nav-cta">Let's Talk</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Drawer">
+    <ul class="mobile-drawer-links">
+      <li><a href="#about" class="drawer-link-item">About</a></li>
+      <li><a href="#services" class="drawer-link-item">Services</a></li>
+      <li><a href="#work" class="drawer-link-item">Selected Work</a></li>
+      <li><a href="projects.html" class="drawer-link-item">Catalog ↗</a></li>
+      <li><a href="#process" class="drawer-link-item">Process</a></li>
+      <li><a href="#contact" class="drawer-link-item">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- --- MAIN PORTFOLIO SECTIONS --- -->
+  <main>
+    
+    <!-- --- HERO SECTION --- -->
+    <section class="hero" id="hero">
+      <!-- Gigantic creative background outline layout -->
+      <div class="hero-bg-text">Harmandeep</div>
+      
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="section-tag">Graphic Designer</span>
+          <h1>Designing visuals<br>that people<br><span class="accent-text">remember.</span></h1>
+          <p>I help businesses communicate better through thoughtful design, branding, social media creatives, print materials, and digital experiences.</p>
+          <div class="hero-ctas">
+            <a href="#work" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Let's Work Together</a>
+          </div>
+        </div>
+        
+        <div class="hero-image-container reveal delay-2">
+          <div class="hero-image-wrapper">
+            <!-- 1. Soft glowing backdrop spotlight -->
+            <div class="hero-image-spotlight"></div>
+            
+            <!-- 2. Floating Graphic Design Tool Badges -->
+            <div class="floating-tools-container" aria-hidden="true">
+              <!-- Photoshop -->
+              <div class="floating-tool-badge tool-photoshop" title="Adobe Photoshop">Ps</div>
+              
+              <!-- Illustrator -->
+              <div class="floating-tool-badge tool-illustrator" title="Adobe Illustrator">Ai</div>
+              
+              <!-- Figma -->
+              <div class="floating-tool-badge tool-figma" title="Figma">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.5 19H12V15.5H8.5C7.11929 15.5 6 16.6193 6 18C6 19.3807 7.11929 20.5 8.5 20.5V19Z" fill="#0ACF83"/>
+                  <path d="M6 12C6 10.6193 7.11929 9.5 8.5 9.5H12V14.5H8.5C7.11929 14.5 6 13.3807 6 12Z" fill="#A259FF"/>
+                  <path d="M8.5 3.5H12V8.5H8.5C7.11929 8.5 6 7.38071 6 6C6 4.61929 7.11929 3.5 8.5 3.5Z" fill="#F24E1E"/>
+                  <path d="M12 3.5H15.5C16.8807 3.5 18 4.61929 18 6C18 7.38071 16.8807 8.5 15.5 8.5H12V3.5Z" fill="#FF7262"/>
+                  <path d="M12 12C12 10.6193 13.1193 9.5 14.5 9.5H18C18 10.8807 16.8807 12 15.5 12C14.5 12 13.1193 12 12 12Z" fill="#1ABCFE"/>
+                </svg>
+              </div>
+              
+              <!-- Canva -->
+              <div class="floating-tool-badge tool-canva" title="Canva">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.962 7.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z" fill="currentColor"/>
+                </svg>
+              </div>
+              
+              <!-- CorelDraw -->
+              <div class="floating-tool-badge tool-coreldraw" title="CorelDRAW">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.651 0C10.265.019 9.4.272 8.584.657c-.816.39-3.696 2.161-3.752 6.536.072 4.145 3.847 11.191 6.397 13.455 0 0-4.141-6.952-4.439-13.013C6.488 1.575 10.651 0 10.651 0Zm2.679 0s4.159 1.575 3.861 7.635c-.299 6.061-4.439 13.013-4.439 13.013 2.547-2.264 6.324-9.31 6.396-13.455-.057-4.375-2.936-6.146-3.752-6.536C14.58.272 13.715.019 13.33 0Zm-1.38.019a1.088 1.088 0 0 0-.555.144C9.864.99 8.909 3.982 9.177 8.66c.185 3.242 1.009 7.291 2.422 11.988h.7c1.413-4.697 2.24-8.742 2.425-11.984.268-4.677-.688-7.674-2.219-8.501a1.088 1.088 0 0 0-.555-.144ZM7.017 1.066S2.543 2.909 3.431 8.225c.884 5.32 5.588 10.995 6.986 12.2.503.457-5.777-6.548-6.386-12.699-.291-2.323.39-4.9 2.986-6.66Zm9.966 0c2.595 1.76 3.276 4.337 2.985 6.66-.608 6.151-6.888 13.156-6.386 12.699 1.398-1.205 6.103-6.88 6.987-12.2.888-5.316-3.586-7.159-3.586-7.159Zm-6.815 20.78L10.647 24h2.599l.488-2.154h-3.566Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- 3. Portrait image container -->
+            <div class="hero-image-frame">
+              <img src="wede.png" alt="Harmandeep Singh — Portrait" onerror="this.src='aura_branding.png';">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --- ABOUT SECTION --- -->
+    <section class="about" id="about">
+      <div class="container">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title"><span>Not Just</span><span>Another Designer.</span></h2>
+        
+        <div class="about-grid">
+          <div class="about-editorial-quote reveal">
+            “Good design isn't just about decoration. It is about communication, details, and clarity.”
+          </div>
+          <div class="about-text reveal delay-2">
+            <p>I'm <strong>Harmandeep Singh</strong>, a graphic designer who enjoys turning complex ideas into visuals that feel clear, professional, and memorable.</p>
+            <p>Over the years, I've worked closely with businesses to create social media graphics, posters, flyers, restaurant branding, marketing materials, and bespoke digital designs that help them stand out from the noise.</p>
+            <p>My creative approach is simple: understand the unique goals of each client, craft something deeply meaningful, and focus heavily on the subtle details that make a design polished, premium, and effective.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --- SERVICES SECTION --- -->
+    <section class="services" id="services">
+      <div class="container">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title"><span>What I Do</span><span>Best.</span></h2>
+        
+        <div class="services-grid">
+          
+          <!-- Service 1 -->
+          <div class="services-card reveal">
+            <div class="service-num">01</div>
+            <div class="service-content">
+              <h3>Social Media Design</h3>
+              <p>Instagram grid layouts, ad creatives, product campaign graphics, and high-impact promotional stories tailored to engage your digital audience.</p>
+            </div>
+            <!-- Dynamic Hover Mini-Preview -->
+            <div class="service-preview-widget" aria-hidden="true">
+              <div class="widget-social-grid">
+                <div class="widget-social-cell"></div>
+                <div class="widget-social-cell"></div>
+                <div class="widget-social-cell"></div>
+                <div class="widget-social-cell"></div>
+                <div class="widget-social-cell"></div>
+                <div class="widget-social-cell"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="services-card reveal delay-1">
+            <div class="service-num">02</div>
+            <div class="service-content">
+              <h3>Print Design</h3>
+              <p>High-end flyers, brochures, menus, event posters, professional business cards, and large-format promotional banners optimized for production.</p>
+            </div>
+            <!-- Dynamic Hover Mini-Preview -->
+            <div class="service-preview-widget" aria-hidden="true">
+              <div class="widget-print-brochure">
+                <div class="brochure-3d">
+                  <div class="brochure-page left"></div>
+                  <div class="brochure-page middle"></div>
+                  <div class="brochure-page right"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 (Website Design - Moved up to balance Row 1) -->
+          <div class="services-card reveal delay-2">
+            <div class="service-num">03</div>
+            <div class="service-content">
+              <h3>Website Design</h3>
+              <p>Modern website layout prototypes, high-fidelity landing pages, and interactive digital interfaces centered around excellent user experience.</p>
+            </div>
+            <!-- Dynamic Hover Mini-Preview -->
+            <div class="service-preview-widget" aria-hidden="true">
+              <div class="widget-web-resizer">
+                <div class="resizer-browser">
+                  <div class="resizer-header">
+                    <div class="resizer-dot"></div>
+                    <div class="resizer-dot"></div>
+                    <div class="resizer-dot"></div>
+                  </div>
+                  <div class="resizer-content">
+                    <div class="resizer-block wide"></div>
+                    <div class="resizer-block"></div>
+                    <div class="resizer-block"></div>
+                    <div class="resizer-block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4 (Branding & Identity - Spans 2 columns on Row 2) -->
+          <div class="services-card span-2 reveal">
+            <div class="service-num">04</div>
+            <div class="service-content">
+              <h3>Branding & Identity</h3>
+              <p>Complete logo designs, custom brand guidelines, color palettes, visual communication systems, and responsive asset packs to give your business a unified, highly recognizable visual language.</p>
+            </div>
+            <!-- Dynamic Hover Mini-Preview -->
+            <div class="service-preview-widget" aria-hidden="true">
+              <div class="widget-branding-typo">
+                <div class="typo-morph">Aa</div>
+                <div class="typo-spec-line">Plus Jakarta</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 (Marketing Creatives) -->
+          <div class="services-card reveal delay-1">
+            <div class="service-num">05</div>
+            <div class="service-content">
+              <h3>Marketing Creatives</h3>
+              <p>Dynamic product promotion assets, print ads, banners, and bespoke campaign graphics designed specifically to drive conversions and branding.</p>
+            </div>
+            <!-- Dynamic Hover Mini-Preview -->
+            <div class="service-preview-widget" aria-hidden="true">
+              <div class="widget-marketing-chart">
+                <svg class="marketing-circle-svg">
+                  <circle class="marketing-circle-bg" cx="30" cy="30" r="25"/>
+                  <circle class="marketing-circle-bar" cx="30" cy="30" r="25"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --- SELECTED WORK SECTION --- -->
+    <section class="portfolio" id="work">
+      <div class="container">
+        <span class="section-tag">Selected Works</span>
+        
+        <div class="portfolio-header">
+          <div class="portfolio-header-left">
+            <h2 class="section-title"><span>Featured</span><span>Case Studies.</span></h2>
+            <p class="section-subtitle-editorial">A premier curation of brand system engineering, editorial posters, and luxury social campaigns.</p>
+          </div>
+          <div class="portfolio-header-right reveal delay-1">
+            <a href="projects.html" class="btn btn-secondary header-explore-btn">
+              All Projects 
+              <span class="arrow-indicator">↗</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="portfolio-grid">
+          
+          <!-- Project 1: Branding -->
+          <div class="portfolio-item bento-featured reveal" data-category="branding" 
+               data-objective="Develop an elegant visual identity including custom logo typography, color palette, custom menus, and upscale packaging reflecting their culinary philosophy."
+               data-outcome="A cohesive, high-end visual presence that elevated customer dining perception and established their visual tone as premium, modern, and minimal.">
+            <div class="portfolio-img-container">
+              <img src="aura_branding.png" alt="Aura Restaurant Branding Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Branding</span>
+            </div>
+            <h3>Aura Restaurant Branding</h3>
+            <p>Sleek sensory branding system for a contemporary fine dining experience.</p>
+          </div>
+
+          <!-- Project 2: Social Media -->
+          <div class="portfolio-item bento-tall reveal delay-1" data-category="social-media"
+               data-objective="Craft clean, thumb-stopping Instagram feeds, promotional stories, and paid advertisements that communicate natural purity and visual calm."
+               data-outcome="Increased social media engagement by 40% and established a premium visual feed consistency that elevated retail conversions.">
+            <div class="portfolio-img-container">
+              <img src="solstice_social.png" alt="Solstice Skincare Social Campaign Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Social Media</span>
+            </div>
+            <h3>Solstice Skincare</h3>
+            <p>Minimalist aesthetic campaigns for a luxury organic skincare range.</p>
+          </div>
+
+          <!-- Project 3: Print Design -->
+          <div class="portfolio-item bento-featured reveal" data-category="print"
+               data-objective="Design a striking poster series combining bold Swiss typography and minimalist artwork capturing high-concept cinematic themes."
+               data-outcome="A widely praised series distributed across physical urban sites, driving a record 30% attendance spike through visual curiosity.">
+            <div class="portfolio-img-container">
+              <img src="nordic_posters.png" alt="Nordic Film Festival Poster Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Print Design</span>
+            </div>
+            <h3>Nordic Film Festival Posters</h3>
+            <p>Editorial typographic posters for a seasonal European film festival.</p>
+          </div>
+
+        </div>
+
+        <!-- Premium editorial button funneling visitors to the projects page -->
+        <div class="portfolio-explore-more reveal">
+          <a href="projects.html" class="btn btn-secondary explore-catalog-btn">
+            Explore All Projects Catalog 
+            <span class="arrow-indicator">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- --- DESIGN PROCESS SECTION --- -->
+    <section class="process" id="process">
+      <div class="container">
+        <span class="section-tag">How I Work</span>
+        <h2 class="section-title"><span>A Structured</span><span>Design Journey.</span></h2>
+        
+        <!-- Elegant Horizontal Timeline Path for Desktop -->
+        <div class="process-timeline-svg-container">
+          <svg class="process-timeline-svg" viewBox="0 0 1000 20" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="process-path-bg" d="M 50,10 L 950,10" stroke="var(--border)" stroke-width="3" stroke-linecap="round"/>
+            <path class="process-path-fill" id="processPathFill" d="M 50,10 L 950,10" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+          </svg>
+        </div>
+
+        <div class="process-grid">
+          
+          <!-- Step 1 -->
+          <div class="process-step reveal">
+            <span class="process-num">01</span>
+            <h3>Discover</h3>
+            <p>Listening carefully to your brand's unique needs, analyzing your target audience, and clarifying the core communication objectives.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step reveal delay-1">
+            <span class="process-num">02</span>
+            <h3>Explore</h3>
+            <p>Performing deep research, establishing conceptual directions, building moodboards, and sketching rough visual compositions.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step reveal delay-2">
+            <span class="process-num">03</span>
+            <h3>Design</h3>
+            <p>Developing robust, professional design solutions, refining typographic alignment, color harmony, and perfecting every asset detail.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step reveal delay-3">
+            <span class="process-num">04</span>
+            <h3>Deliver</h3>
+            <p>Supplying production-ready file formats, polished social grids, or vector assets, completely optimized for digital or physical use.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --- TESTIMONIALS SECTION --- -->
+    <section class="testimonials">
+      <div class="container">
+        <span class="section-tag">Feedback</span>
+        <h2 class="section-title"><span>What Partners</span><span>Say.</span></h2>
+        
+        <div class="testimonials-grid">
+          
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card reveal">
+            <p class="testimonial-quote">"Harmandeep turned our abstract restaurant idea into a beautiful visual brand. His reliability, patience, and visual execution made the entire collaboration seamless."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Chef Marcus Vance</span>
+              <span class="author-title">Owner, Aura Fine Dining</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card reveal delay-1">
+            <p class="testimonial-quote">"His graphic assets are flawless. Communication was super clear and he constantly brought fresh, creative ideas that significantly raised our campaign performance."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Sarah K.</span>
+              <span class="author-title">Marketing Director, Solstice Skincare</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card reveal">
+            <p class="testimonial-quote">"Harmandeep's editorial poster series was simply spectacular. He understands complex visual hierarchy and delivers true artistic professionalism on tight deadlines."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Erik J.</span>
+              <span class="author-title">Event Producer, Nordic Film Co.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --- SKILLS SECTION --- -->
+    <section class="skills">
+      <div class="container">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title" style="text-align: center;"><span>Visual Tools</span><span>& Craft.</span></h2>
+        
+        <div class="skills-grid">
+          
+          <div class="skill-tag reveal">
+            <!-- Photoshop Icon (custom design tag) -->
+            <span>Photoshop</span>
+          </div>
+
+          <div class="skill-tag reveal delay-1">
+            <span>Illustrator</span>
+          </div>
+
+          <div class="skill-tag reveal delay-2">
+            <span>Canva</span>
+          </div>
+
+          <div class="skill-tag reveal delay-3">
+            <span>Figma</span>
+          </div>
+
+          <div class="skill-tag reveal delay-4">
+            <span>CorelDRAW</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --- CONTACT SECTION --- -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <div>
+            <span class="section-tag">Get in Touch</span>
+            <h2>Have a project<br>in mind?</h2>
+            <p>Whether you need a complete branding system, marketing campaigns, high-performance social media graphics, or polished print materials, I'd love to hear about your goals.</p>
+          </div>
+          
+          <div class="contact-socials-wrapper">
+            <span class="contact-socials-title">Follow My Work</span>
+            <ul class="social-links">
+              <li><a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="social-link">Behance</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <form class="contact-form reveal delay-2" id="contactForm" novalidate>
+          <div class="form-group">
+            <input type="text" id="formName" name="name" placeholder=" " required>
+            <label for="formName">Full Name</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="formEmail" name="email" placeholder=" " required>
+            <label for="formEmail">Email Address</label>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="formDetails" name="details" rows="5" placeholder=" " required></textarea>
+            <label for="formDetails">Project Details</label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- --- IMMERSIVE PORTFOLIO MODAL --- -->
+  <div class="modal-overlay" id="workModal" role="dialog" aria-modal="true" aria-labelledby="modalProjTitle">
+    <div class="modal-content-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Case Study">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="modal-hero-img">
+        <img id="modalImg" src="aura_branding.png" alt="Selected Work Mockup">
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-header-meta">
+          <span id="modalCategory">Branding</span>
+        </div>
+        <h3 class="modal-title" id="modalProjTitle">Project Name</h3>
+        
+        <div class="modal-editorial-grid">
+          <div class="modal-block">
+            <h4>Design Objective</h4>
+            <p id="modalObjective">The design objective text goes here.</p>
+          </div>
+          <div class="modal-block">
+            <h4>Final Outcome</h4>
+            <p id="modalOutcome">The final outcome details go here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- SYSTEM TOAST FEEDBACK --- -->
+  <div class="toast-success" id="successToast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>Message Sent Successfully</span>
+  </div>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4>Harmandeep Singh</h4>
+        <p>Graphic Designer © 2026. All rights reserved.</p>
+      </div>
+      <div class="footer-quote">
+        "Good design isn't decoration. It's communication."
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Works Catalog of Harmandeep Singh - Comprehensive creative archive of professional brand systems, luxury print layouts, digital interface prototypes, and social media campaigns.">
+  <meta name="keywords" content="Harmandeep Singh, Graphic Design Catalog, Branding Portfolio, Social Media Design, Print Layouts, Custom Branding, Flyer Design">
+  <meta name="author" content="Harmandeep Singh">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Creative Catalog — Harmandeep Singh">
+  <meta property="og:description" content="Detailed record of custom brand campaigns, editorial posters, and bespoke digital visual systems.">
+  <meta property="og:image" content="wede.png">
+
+  <title>Works Catalog — Harmandeep Singh</title>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- --- FLOATING RESUME FAB (Rotating Circular Text) --- -->
+  <a href="resume.pdf" class="floating-resume-fab" id="resumeFab" download aria-label="Download Resume" title="Download Resume">
+    <!-- Spinning circular text ring -->
+    <svg class="fab-rotating-text" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path id="fabCirclePathP" d="M 100, 100 m -72, 0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
+      </defs>
+      <text>
+        <textPath href="#fabCirclePathP" startOffset="0%">
+          DOWNLOAD &nbsp;·&nbsp; RESUME &nbsp;·&nbsp; DOWNLOAD &nbsp;·&nbsp; RESUME &nbsp;·&nbsp;
+        </textPath>
+      </text>
+    </svg>
+    <!-- Center arrow icon -->
+    <span class="fab-center-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </span>
+  </a>
+
+  <!-- --- DYNAMIC CUSTOM CURSOR LENS --- -->
+  <div class="custom-cursor-lens" id="customCursor" aria-hidden="true">
+    <div class="cursor-dot">
+      <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring">
+      <div class="cursor-ring-inner"></div>
+    </div>
+    <div class="cursor-decal-label" id="cursorDecalLabel"></div>
+  </div>
+
+  <!-- --- PRECISION LAYOUT GRID OVERLAY --- -->
+  <div class="grid-overlay-container">
+    <div class="grid-margin-marker left"></div>
+    <div class="grid-margin-marker right"></div>
+    
+    <!-- Floating Info Panel explaining Grid Mode to visitors -->
+    <div class="grid-info-panel">
+      <div class="grid-info-header">
+        <span class="grid-info-dot"></span>
+        <span class="grid-info-title">System Grid Active</span>
+      </div>
+      <div class="grid-info-body">
+        <p>This overlay exposes the underlying geometric grid system that enforces mathematical alignment, proportion, and spacing across my portfolio.</p>
+        <ul class="grid-info-legend">
+          <li><span class="legend-line margin"></span> Margin Bounds (5%)</li>
+          <li><span class="legend-line vertical"></span> Column block Gutters (80px)</li>
+          <li><span class="legend-badge">SPEC</span> CSS Type & Padding specs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- NAVIGATION HEADER --- -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="navLogo">
+        Harmandeep<span>.</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="back-home-link">← Back to Home</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- HSL Brand Palette Sandbox Selector -->
+        <div class="palette-dropdown-container" id="paletteDropdown">
+          <button class="palette-select-btn" aria-label="Select Color Theme" title="Select Theme Palette">Theme</button>
+          <ul class="palette-menu" role="menu">
+            <li role="presentation">
+              <button class="palette-btn active" data-palette="slate" role="menuitem">
+                <span class="palette-dot slate"></span> Slate Blue
+              </button>
+            </li>
+            <li role="presentation">
+              <button class="palette-btn" data-palette="terracotta" role="menuitem">
+                <span class="palette-dot terracotta"></span> Terracotta
+              </button>
+            </li>
+            <li role="presentation">
+              <button class="palette-btn" data-palette="cyber" role="menuitem">
+                <span class="palette-dot cyber"></span> Cyber Neon
+              </button>
+            </li>
+            <li role="presentation">
+              <button class="palette-btn" data-palette="mint" role="menuitem">
+                <span class="palette-dot mint"></span> Forest Mint
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode" title="Toggle Mode">
+          <!-- Sun Icon SVG -->
+          <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1V3H13V1H11ZM11 21V23H13V21H11ZM3.51472 4.92893L4.92893 3.51472L6.34315 4.92893L4.92893 6.34315L3.51472 4.92893ZM17.6569 19.0711L19.0711 17.6569L20.4853 19.0711L19.0711 20.4853L17.6569 19.0711ZM1 11H3V13H1V11ZM21 11H23V13H21V11ZM3.51472 19.0711L4.92893 20.4853L6.34315 19.0711L4.92893 17.6569L3.51472 19.0711ZM17.6569 4.92893L19.0711 6.34315L20.4853 4.92893L19.0711 3.51472L17.6569 4.92893Z"/>
+          </svg>
+          <!-- Moon Icon SVG -->
+          <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C10.4503 3.0016 8.92482 3.42875 7.57502 4.23882C6.22521 5.0489 5.10183 6.21147 4.31682 7.61053C3.53181 9.00958 3.11545 10.5935 3.10915 12.2043C3.10286 13.815 3.50687 15.394 4.28093 16.7842C5.055 18.1743 6.16912 19.3248 7.51226 20.1211C8.85539 20.9174 10.3773 21.3289 11.9268 21.3146C13.4764 21.3004 14.9959 20.8609 16.3341 20.0396C17.6723 19.2184 18.78 18.0468 19.547 16.641C18.1408 17.1352 16.626 17.2285 15.1534 16.9113C13.6807 16.5941 12.3082 15.8783 11.1718 14.8348C10.0354 13.7912 9.17855 12.4602 8.68595 10.9734C8.19335 9.48658 8.08419 7.90099 8.36923 6.37299C8.65427 4.845 9.32289 3.43328 10.309 2.27702C10.8715 2.76674 11.3323 3.37688 11.6521 4.05593C11.9719 4.73499 12.1428 5.46738 12.1501 6.20894C12.1573 6.9505 12.0008 7.68378 11.6934 8.34789C11.386 9.01199 10.9351 9.59124 10.3789 10.0371C9.82273 10.4831 9.1744 10.7854 8.4878 10.9189C7.80121 11.0524 7.0924 11.0137 6.421 10.8058C6.35338 11.1993 6.32047 11.5991 6.3225 12C6.3225 15.1322 8.86778 17.6775 12 17.6775C14.7709 17.6775 17.1009 15.6881 17.5854 13.0489C18.156 13.5684 18.8284 13.9723 19.5638 14.2372C20.2991 14.5021 21.0824 14.6225 21.869 14.5915C21.6429 15.8647 21.0583 17.0427 20.1915 17.9711C19.3248 18.8996 18.2139 19.5372 16.9926 19.8021C15.7712 20.0671 14.4925 19.9479 13.3159 19.4597C12.1394 18.9715 11.115 18.136 10.3725 17.0588C9.62998 15.9816 9.19965 14.7107 9.13531 13.4072C9.07097 12.1037 9.37548 10.8252 10.0101 9.73305C10.6447 8.64094 11.5815 7.78284 12.7013 7.26693C13.8211 6.75103 15.0747 6.60012 16.297 6.8335C15.187 5.61864 13.6826 4.79252 12.023 4.4855C12.008 3.99201 12.0002 3.49755 12 3Z"/>
+          </svg>
+        </button>
+        <a href="index.html#contact" class="btn btn-secondary nav-cta">Let's Talk</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Drawer">
+    <ul class="mobile-drawer-links">
+      <li><a href="index.html" class="drawer-link-item">← Back to Home</a></li>
+    </ul>
+  </div>
+
+  <!-- --- MAIN CATALOG CONTENT --- -->
+  <main>
+    
+    <!-- --- CATALOG HERO SECTION --- -->
+    <section class="catalog-hero reveal">
+      <div class="container">
+        <span class="section-tag">Selected Works Archive</span>
+        <h1 class="editorial-headline">Creative<br>Catalog<span>.</span></h1>
+        <p class="editorial-subline">A comprehensive record of premium brand systems, luxury social campaigns, botanical print advertisements, Swiss-style posters, and modern web interface prototypes designed for global clients.</p>
+      </div>
+    </section>
+
+    <!-- --- COMPREHENSIVE SELECTED WORK SECTION --- -->
+    <section class="portfolio" id="work">
+      <div class="container">
+        
+        <div class="portfolio-header">
+          <span class="section-tag">Interactive Catalog Archive</span>
+          
+          <!-- Category Filtering Menu (Fully Operational) -->
+          <ul class="portfolio-filters" role="tablist">
+            <li><button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Work</button></li>
+            <li><button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button></li>
+            <li><button class="filter-btn" data-filter="social-media" role="tab" aria-selected="false">Social Media</button></li>
+            <li><button class="filter-btn" data-filter="print" role="tab" aria-selected="false">Print Design</button></li>
+            <li><button class="filter-btn" data-filter="advertising" role="tab" aria-selected="false">Advertising</button></li>
+            <li><button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Design</button></li>
+          </ul>
+        </div>
+        
+        <div class="portfolio-grid">
+          
+          <!-- Project 1: Branding -->
+          <div class="portfolio-item bento-featured reveal" data-category="branding" 
+               data-objective="Develop an elegant visual identity including custom logo typography, color palette, custom menus, and upscale packaging reflecting their culinary philosophy."
+               data-outcome="A cohesive, high-end visual presence that elevated customer dining perception and established their visual tone as premium, modern, and minimal.">
+            <div class="portfolio-img-container">
+              <img src="aura_branding.png" alt="Aura Restaurant Branding Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Branding</span>
+            </div>
+            <h3>Aura Restaurant Branding</h3>
+            <p>Sleek sensory branding system for a contemporary fine dining experience.</p>
+          </div>
+
+          <!-- Project 2: Social Media -->
+          <div class="portfolio-item bento-tall reveal delay-1" data-category="social-media"
+               data-objective="Craft clean, thumb-stopping Instagram feeds, promotional stories, and paid advertisements that communicate natural purity and visual calm."
+               data-outcome="Increased social media engagement by 40% and established a premium visual feed consistency that elevated retail conversions.">
+            <div class="portfolio-img-container">
+              <img src="solstice_social.png" alt="Solstice Skincare Social Campaign Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Social Media</span>
+            </div>
+            <h3>Solstice Skincare</h3>
+            <p>Minimalist aesthetic campaigns for a luxury organic skincare range.</p>
+          </div>
+
+          <!-- Project 3: Print Design -->
+          <div class="portfolio-item bento-featured reveal" data-category="print"
+               data-objective="Design a striking poster series combining bold Swiss typography and minimalist artwork capturing high-concept cinematic themes."
+               data-outcome="A widely praised series distributed across physical urban sites, driving a record 30% attendance spike through visual curiosity.">
+            <div class="portfolio-img-container">
+              <img src="nordic_posters.png" alt="Nordic Film Festival Poster Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Print Design</span>
+            </div>
+            <h3>Nordic Film Festival Posters</h3>
+            <p>Editorial typographic posters for a seasonal European film festival.</p>
+          </div>
+
+          <!-- Project 4: Advertising -->
+          <div class="portfolio-item bento-wide reveal delay-1" data-category="advertising"
+               data-objective="Formulate print magazine advertisements highlighting organic ingredients utilizing delicate layouts and harmonious spacing."
+               data-outcome="Constructed premium editorial ads that reinforced brand authority in premium beauty publications and secured boutique distribution.">
+            <div class="portfolio-img-container">
+              <img src="verdant_ads.png" alt="Verdant Botanical Magazine Ad Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Advertising</span>
+            </div>
+            <h3>Verdant Botanical Ads</h3>
+            <p>Luxurious organic product promotions for a modern magazine editorial.</p>
+          </div>
+
+          <!-- Project 5: Web Design -->
+          <div class="portfolio-item bento-wide reveal" data-category="web"
+               data-objective="Draft an immersive, dark-themed website interface mapping architectural photography, clean thin borders, and bold headers."
+               data-outcome="Delivered a dramatic digital experience focusing strictly on physical space, elevating client inquiries and studio prestige.">
+            <div class="portfolio-img-container">
+              <img src="zenith_web.png" alt="Zenith Architect Studio Website Mockup">
+            </div>
+            <div class="portfolio-item-meta">
+              <span class="portfolio-item-tag">Web Design</span>
+            </div>
+            <h3>Zenith Architect Studio</h3>
+            <p>Ultra-modern portfolio platform concept for a boutique structural firm.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- --- IMMERSIVE PORTFOLIO MODAL --- -->
+  <div class="modal-overlay" id="workModal" role="dialog" aria-modal="true" aria-labelledby="modalProjTitle">
+    <div class="modal-content-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Case Study">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="modal-hero-img">
+        <img id="modalImg" src="aura_branding.png" alt="Selected Work Mockup">
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-header-meta">
+          <span id="modalCategory">Branding</span>
+        </div>
+        <h3 class="modal-title" id="modalProjTitle">Project Name</h3>
+        
+        <div class="modal-editorial-grid">
+          <div class="modal-block">
+            <h4>Design Objective</h4>
+            <p id="modalObjective">The design objective text goes here.</p>
+          </div>
+          <div class="modal-block">
+            <h4>Final Outcome</h4>
+            <p id="modalOutcome">The final outcome details go here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4>Harmandeep Singh</h4>
+        <p>Graphic Designer © 2026. All rights reserved.</p>
+      </div>
+      <div class="footer-quote">
+        "Good design isn't decoration. It's communication."
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
