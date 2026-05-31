@@ -322,14 +322,19 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`\n=================================================`);
-  console.log(`Harmandeep Singh Portfolio Full-Stack Application`);
-  console.log(`=================================================`);
-  console.log(`Server is running at: http://localhost:${PORT}`);
-  console.log(`Admin Panel URL:       http://localhost:${PORT}/admin`);
-  console.log(`Default login user:   admin`);
-  console.log(`Default login pass:   HarmandeepDesign2026`);
-  console.log(`=================================================\n`);
-});
+// Export the Express app instance for Vercel Serverless Functions
+module.exports = app;
+
+// Start the port listener only if running locally (e.g., node server.js)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n=================================================`);
+    console.log(`Harmandeep Singh Portfolio Full-Stack Application`);
+    console.log(`=================================================`);
+    console.log(`Server is running at: http://localhost:${PORT}`);
+    console.log(`Admin Panel URL:       http://localhost:${PORT}/admin`);
+    console.log(`Default login user:   admin`);
+    console.log(`Default login pass:   HarmandeepDesign2026`);
+    console.log(`=================================================\n`);
+  });
+}
