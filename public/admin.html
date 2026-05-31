@@ -17,29 +17,24 @@
 
   <!-- --- 2. AUTHENTICATION LOGIN PANEL --- -->
   <section class="login-wrapper" id="loginWrapper">
-    <div class="login-card">
-      <div class="login-header">
-        <span class="system-tag">Security Gateway</span>
-        <h2>Harmandeep<span>.</span></h2>
-        <p>Access the administrative dashboard panel.</p>
+    <div class="login-container">
+      <div class="login-brand">
+        <h2>Harmandeep Singh</h2>
+        <p class="brand-sub">Visual Portfolio Administration</p>
       </div>
+      
       <form id="loginForm" class="login-form">
         <div class="form-group">
-          <label for="loginUser">Username</label>
-          <input type="text" id="loginUser" autocomplete="username" required placeholder="Enter username">
+          <input type="text" id="loginUser" autocomplete="username" required placeholder="Username">
         </div>
         <div class="form-group">
-          <label for="loginPass">Password</label>
-          <input type="password" id="loginPass" autocomplete="current-password" required placeholder="Enter secure password">
+          <input type="password" id="loginPass" autocomplete="current-password" required placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary login-btn">
-          Verify & Unlock
-          <span class="btn-arrow">→</span>
+        <button type="submit" class="login-submit-btn">
+          Unlock System
+          <span>→</span>
         </button>
       </form>
-      <div class="login-footer">
-        <p>Protected by session token authentication.</p>
-      </div>
     </div>
   </section>
 
