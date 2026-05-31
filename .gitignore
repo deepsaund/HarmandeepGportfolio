@@ -16,3 +16,8 @@ Desktop.ini
 *.njsproj
 *.sln
 *.swp
+
+# Node dependencies & Credentials
+node_modules/
+.env
+

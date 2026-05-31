@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Admin Panel — Harmandeep Singh</title>
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+  <!-- --- 1. DYNAMIC SYSTEM TOAST --- -->
+  <div class="toast-notification" id="adminToast" role="alert" aria-live="assertive">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="adminToastMsg">Operation completed successfully.</span>
+  </div>
+
+  <!-- --- 2. AUTHENTICATION LOGIN PANEL --- -->
+  <section class="login-wrapper" id="loginWrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <span class="system-tag">Security Gateway</span>
+        <h2>Harmandeep<span>.</span></h2>
+        <p>Access the administrative dashboard panel.</p>
+      </div>
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="loginUser">Username</label>
+          <input type="text" id="loginUser" autocomplete="username" required placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="loginPass">Password</label>
+          <input type="password" id="loginPass" autocomplete="current-password" required placeholder="Enter secure password">
+        </div>
+        <button type="submit" class="btn btn-primary login-btn">
+          Verify & Unlock
+          <span class="btn-arrow">→</span>
+        </button>
+      </form>
+      <div class="login-footer">
+        <p>Protected by session token authentication.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 3. CORE MANAGEMENT DASHBOARD --- -->
+  <main class="dashboard-wrapper hidden" id="dashboardWrapper">
+    
+    <!-- Top Global Header -->
+    <header class="dashboard-header">
+      <div class="header-brand">
+        <h1>Harmandeep<span>.</span></h1>
+        <span class="panel-badge">Admin Dashboard</span>
+      </div>
+      
+      <div class="header-actions">
+        <div class="system-status">
+          <span class="status-dot animate-pulse"></span>
+          <span class="status-text">Server Online</span>
+        </div>
+        <button id="logoutBtn" class="logout-btn">
+          Logout
+          <svg class="logout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard-container">
+      
+      <!-- Left sidebar navigation tabs -->
+      <aside class="dashboard-sidebar">
+        <nav class="sidebar-nav">
+          <button class="nav-tab active" data-tab="projects">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="9"></rect>
+              <rect x="14" y="3" width="7" height="5"></rect>
+              <rect x="14" y="12" width="7" height="9"></rect>
+              <rect x="3" y="16" width="7" height="5"></rect>
+            </svg>
+            Projects Catalog
+          </button>
+          
+          <button class="nav-tab" data-tab="inbox">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Contact Inbox
+            <span class="badge hidden" id="inboxBadge">0</span>
+          </button>
+
+          <button class="nav-tab" data-tab="settings">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            System Config
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p>Logged in as <strong id="currentUser">admin</strong></p>
+          <a href="/" target="_blank" class="view-site-link">View Portfolio Site ↗</a>
+        </div>
+      </aside>
+
+      <!-- Main content view sections -->
+      <section class="dashboard-content">
+        
+        <!-- Tab 1: Projects Catalog -->
+        <div class="content-tab-view active" id="tab-projects">
+          <div class="tab-header">
+            <div class="tab-header-left">
+              <h2>Portfolio Works Catalog</h2>
+              <p>Add, edit, remove, and filter bento projects inside the main grid system.</p>
+            </div>
+            <button class="btn btn-primary add-project-btn" id="openAddProjectDrawerBtn">
+              + Add New Project
+            </button>
+          </div>
+
+          <!-- Quick Stats bar inside panel -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-label">Total Works</span>
+              <span class="stat-value" id="statsTotalProjects">0</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Featured in Bento Grid</span>
+              <span class="stat-value" id="statsFeaturedProjects">0</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Latest Update</span>
+              <span class="stat-value" id="statsLastUpdated">Today</span>
+            </div>
+          </div>
+
+          <!-- Active Projects Grid list -->
+          <div class="projects-list-grid" id="projectsListGrid">
+            <!-- Dynamically populated project cards -->
+            <div class="admin-loading">
+              <div class="spinner"></div>
+              <p>Fetching project data from system...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Contact Inbox -->
+        <div class="content-tab-view" id="tab-inbox">
+          <div class="tab-header">
+            <div class="tab-header-left">
+              <h2>Contact Message Inbox</h2>
+              <p>Read and manage client submissions from your "Let's Talk" form.</p>
+            </div>
+            <div class="tab-header-right">
+              <span class="inbox-status-tag" id="inboxStatusTag">0 Unread Messages</span>
+            </div>
+          </div>
+
+          <!-- Messages list inbox wrapper -->
+          <div class="messages-list-wrapper" id="messagesListWrapper">
+            <!-- Dynamically populated messages -->
+            <div class="inbox-empty">
+              <p>Inbox is clean. No enquiries received yet.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: System Configurations -->
+        <div class="content-tab-view" id="tab-settings">
+          <div class="tab-header">
+            <div class="tab-header-left">
+              <h2>Global System Configuration</h2>
+              <p>Update personal taglines, portfolio metadata, and system links.</p>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <!-- Left Card: Portfolio configuration variables -->
+            <div class="settings-card">
+              <h3>Portfolio Variables</h3>
+              <form id="configForm" class="settings-form">
+                <div class="form-group">
+                  <label for="configName">Designer Display Name</label>
+                  <input type="text" id="configName" required>
+                </div>
+                <div class="form-group">
+                  <label for="configTagline">Hero Section Tagline</label>
+                  <input type="text" id="configTagline" required>
+                </div>
+                <div class="form-group">
+                  <label for="configResume">Resume PDF filename</label>
+                  <input type="text" id="configResume" required>
+                  <span class="form-help">Ensure the physical file is placed in your public/ directory.</span>
+                </div>
+                <button type="submit" class="btn btn-primary save-config-btn">
+                  Save Changes
+                </button>
+              </form>
+            </div>
+
+            <!-- Right Card: Credentials update info -->
+            <div class="settings-card info-card">
+              <h3>Administrator System Account</h3>
+              <div class="account-info">
+                <div class="info-row">
+                  <span class="info-label">Active Username</span>
+                  <span class="info-value">admin</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Authentication Type</span>
+                  <span class="info-value">Session Cookie</span>
+                </div>
+              </div>
+              <div class="alert-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p>To change your administrative password, edit the <strong>.env</strong> file credentials locally and restart the backend server.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- --- 4. DYNAMIC SLIDEOVER DRAWER (ADD/EDIT PROJECT) --- -->
+  <div class="drawer-overlay" id="projectDrawer">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h2 id="drawerTitle">Add New Portfolio Project</h2>
+        <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close panel">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="projectForm" class="drawer-form" enctype="multipart/form-data">
+        <input type="hidden" id="projectFormId" name="id">
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="projTitle">Project Title</label>
+            <input type="text" id="projTitle" name="title" required placeholder="e.g. Aura Restaurant Branding">
+          </div>
+          
+          <div class="form-group">
+            <label for="projSubtitle">Brief Tagline Description</label>
+            <input type="text" id="projSubtitle" name="subtitle" required placeholder="e.g. Sleek sensory branding system for a contemporary fine dining experience.">
+          </div>
+
+          <div class="form-group split-group">
+            <div class="split-col">
+              <label for="projCategory">Work Category</label>
+              <select id="projCategory" name="category" required>
+                <option value="branding">Branding</option>
+                <option value="social-media">Social Media</option>
+                <option value="print">Print Design</option>
+                <option value="advertising">Advertising</option>
+                <option value="web">Web Design</option>
+              </select>
+            </div>
+            
+            <div class="split-col">
+              <label for="projLayout">Bento Grid Layout style</label>
+              <select id="projLayout" name="layout" required>
+                <option value="bento-featured">Featured (Standard Aspect)</option>
+                <option value="bento-tall">Tall (Portrait Aspect)</option>
+                <option value="bento-wide">Wide (Landscape Aspect)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Cover Mockup Image</label>
+            
+            <!-- Real-time dynamic visual preview container -->
+            <div class="image-upload-preview" id="imageUploadPreview">
+              <div class="preview-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <p>No image mockup uploaded yet.</p>
+              </div>
+              <img src="" alt="Mockup Preview" class="preview-img hidden" id="previewImgElement">
+            </div>
+
+            <!-- Upload selectors -->
+            <div class="upload-controls">
+              <div class="file-upload-input">
+                <input type="file" id="projFile" name="imageFile" accept="image/*">
+                <span class="file-custom-btn">Upload Local File Mockup</span>
+              </div>
+              <span class="upload-or">OR</span>
+              <input type="text" id="projUrl" name="imageUrl" placeholder="Type filename (e.g. zenith_web.png)">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="projObjective">Design Case Study Objective</label>
+            <textarea id="projObjective" name="objective" rows="3" placeholder="Explain the design challenges, visitor goals, and objectives..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="projOutcome">Design Case Study Outcome</label>
+            <textarea id="projOutcome" name="outcome" rows="3" placeholder="Detail the results, positive metrics, client success, and final outcome..."></textarea>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="projFeatured" name="featured" value="true">
+            <label for="projFeatured" class="checkbox-label">Display in Homepage Curator Grid</label>
+          </div>
+        </div>
+
+        <div class="drawer-footer">
+          <button type="button" class="btn btn-secondary" id="cancelDrawerBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveProjectBtn">Save & Deploy</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

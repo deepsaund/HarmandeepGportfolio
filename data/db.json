@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Aura Restaurant Branding",
+      "subtitle": "Sleek sensory branding system for a contemporary fine dining experience.",
+      "category": "branding",
+      "img": "aura_branding.png",
+      "objective": "Develop an elegant visual identity including custom logo typography, color palette, custom menus, and upscale packaging reflecting their culinary philosophy.",
+      "outcome": "A cohesive, high-end visual presence that elevated customer dining perception and established their visual tone as premium, modern, and minimal.",
+      "featured": true,
+      "layout": "bento-featured",
+      "date": "2026-05-01"
+    },
+    {
+      "id": 2,
+      "title": "Solstice Skincare",
+      "subtitle": "Minimalist aesthetic campaigns for a luxury organic skincare range.",
+      "category": "social-media",
+      "img": "solstice_social.png",
+      "objective": "Craft clean, thumb-stopping Instagram feeds, promotional stories, and paid advertisements that communicate natural purity and visual calm.",
+      "outcome": "Increased social media engagement by 40% and established a premium visual feed consistency that elevated retail conversions.",
+      "featured": true,
+      "layout": "bento-tall",
+      "date": "2026-05-10"
+    },
+    {
+      "id": 3,
+      "title": "Nordic Film Festival Posters",
+      "subtitle": "Editorial typographic posters for a seasonal European film festival.",
+      "category": "print",
+      "img": "nordic_posters.png",
+      "objective": "Design a striking poster series combining bold Swiss typography and minimalist artwork capturing high-concept cinematic themes.",
+      "outcome": "A widely praised series distributed across physical urban sites, driving a record 30% attendance spike through visual curiosity.",
+      "featured": true,
+      "layout": "bento-featured",
+      "date": "2026-05-15"
+    },
+    {
+      "id": 4,
+      "title": "Verdant Botanical Ads",
+      "subtitle": "Luxurious organic product promotions for a modern magazine editorial.",
+      "category": "advertising",
+      "img": "verdant_ads.png",
+      "objective": "Formulate print magazine advertisements highlighting organic ingredients utilizing delicate layouts and harmonious spacing.",
+      "outcome": "Constructed premium editorial ads that reinforced brand authority in premium beauty publications and secured boutique distribution.",
+      "featured": false,
+      "layout": "bento-wide",
+      "date": "2026-05-20"
+    },
+    {
+      "id": 5,
+      "title": "Zenith Architect Studio",
+      "subtitle": "Ultra-modern portfolio platform concept for a boutique structural firm.",
+      "category": "web",
+      "img": "zenith_web.png",
+      "objective": "Draft an immersive, dark-themed website interface mapping architectural photography, clean thin borders, and bold headers.",
+      "outcome": "Delivered a dramatic digital experience focusing strictly on physical space, elevating client inquiries and studio prestige.",
+      "featured": false,
+      "layout": "bento-wide",
+      "date": "2026-05-25"
+    }
+  ],
+  "enquiries": [
+    {
+      "id": 1780227945077,
+      "name": "Sarah Croft",
+      "email": "sarah@croftdesign.com",
+      "details": "Hi Harmandeep, we would love to hire you for a custom packaging and brand identity design project for our luxury candle brand!",
+      "timestamp": "2026-05-31T11:45:45.077Z",
+      "read": false
+    }
+  ],
+  "config": {
+    "designerName": "Harmandeep Singh",
+    "tagline": "Designing visuals that people remember.",
+    "resumeUrl": "resume.pdf"
+  }
+}
