@@ -56,45 +56,57 @@ body.admin-body {
 /* --- DYNAMIC SYSTEM TOAST --- */
 .toast-notification {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: var(--bg-secondary);
+  bottom: 32px;
+  right: 32px;
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--success);
-  padding: 16px 24px;
+  padding: 14px 20px;
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-premium);
   z-index: 1000;
   display: flex;
   align-items: center;
   gap: 12px;
-  transform: translateY(100px);
+  transform: translateY(20px);
   opacity: 0;
+  pointer-events: none;
   transition: var(--transition-smooth);
 }
 
 .toast-notification.show {
   transform: translateY(0);
   opacity: 1;
-}
-
-.toast-notification.error {
-  border-left-color: var(--error);
+  pointer-events: auto;
 }
 
 .toast-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: var(--success-bg);
   color: var(--success);
-  font-weight: bold;
+  border: 1px solid rgba(63, 185, 80, 0.25);
+  flex-shrink: 0;
 }
 
 .toast-notification.error .toast-icon {
+  background-color: var(--error-bg);
   color: var(--error);
+  border: 1px solid rgba(248, 81, 73, 0.25);
 }
 
 .toast-message {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-main);
   font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
 /* --- SECURITY LOGIN PANEL --- */
@@ -105,17 +117,15 @@ body.admin-body {
   justify-content: center;
   padding: 24px;
   background-color: var(--bg-primary);
-  background-image: radial-gradient(circle at center, rgba(88, 166, 255, 0.03) 0%, transparent 70%);
 }
 
 .login-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--border-radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-premium);
+  padding: 48px 40px;
   transition: var(--transition-smooth);
 }
 
@@ -128,8 +138,8 @@ body.admin-body {
   display: inline-block;
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--accent);
+  letter-spacing: 2px;
+  color: var(--text-muted);
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -139,6 +149,7 @@ body.admin-body {
   font-size: 32px;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: -0.5px;
 }
 
 .login-header h2 span {
@@ -146,9 +157,10 @@ body.admin-body {
 }
 
 .login-header p {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
   margin-top: 8px;
+  line-height: 1.5;
 }
 
 /* Premium Form Elements */
@@ -158,11 +170,12 @@ body.admin-body {
 
 label {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 8px;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 input[type="text"],
@@ -184,11 +197,10 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(48, 128, 248, 0.15);
+  border-color: var(--text-main);
 }
 
-/* Button UI */
+/* Button UI - Handcrafted Typographic Design */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -197,21 +209,25 @@ select:focus {
   padding: 12px 24px;
   border-radius: var(--border-radius-md);
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition-smooth);
   border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  color: var(--text-inverse);
+  background-color: var(--text-main);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-main);
 }
 
 .btn-primary:hover {
-  background-color: #79b6ff;
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+  background-color: transparent;
+  color: var(--text-main);
+  box-shadow: none; /* Removed typical AI-generated glow shadow */
 }
 
 .btn-secondary {
@@ -228,13 +244,15 @@ select:focus {
 .login-btn {
   width: 100%;
   margin-top: 12px;
+  height: 46px;
 }
 
 .login-footer {
   text-align: center;
   margin-top: 32px;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-muted);
+  letter-spacing: 0.2px;
 }
 
 /* --- CORE MANAGEMENT DASHBOARD LAYOUT --- */
@@ -290,35 +308,6 @@ select:focus {
   gap: 24px;
 }
 
-.system-status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--success);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--success);
-}
-
-.animate-pulse {
-  animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-.status-text {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
 .logout-btn {
   background: transparent;
   border: 1px solid var(--border);
@@ -368,7 +357,8 @@ select:focus {
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  padding-left: 12px;
 }
 
 .nav-tab {
@@ -377,9 +367,8 @@ select:focus {
   color: var(--text-muted);
   font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 600;
-  padding: 14px 20px;
-  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  padding: 8px 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -390,14 +379,33 @@ select:focus {
 }
 
 .nav-tab:hover {
-  background-color: var(--bg-primary);
+  background-color: transparent;
   color: var(--text-main);
 }
 
 .nav-tab.active {
-  background-color: var(--bg-tertiary);
-  color: var(--accent);
-  box-shadow: inset 3px 0 0 var(--accent);
+  background-color: transparent;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* Elegant single premium dot indicator */
+.nav-tab::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--transition-smooth);
+}
+
+.nav-tab.active::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .nav-icon {

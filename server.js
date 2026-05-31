@@ -312,6 +312,11 @@ app.post('/api/admin/config', requireAuth, (req, res) => {
   res.json({ success: true, config: db.config });
 });
 
+// Explicit route for the administration panel
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
 // Fallback to serve index.html for undefined frontend routes
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
