@@ -12,9 +12,13 @@ const PORT = process.env.PORT || 3000;
 const DB_FILE = path.join(__dirname, 'data', 'db.json');
 const UPLOADS_DIR = path.join(__dirname, 'public', 'uploads');
 
-// Ensure database and uploads folders exist
-if (!fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+// Ensure uploads folders exist safely (gated for read-only Serverless environments)
+try {
+  if (!fs.existsSync(UPLOADS_DIR)) {
+    fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+  }
+} catch (err) {
+  console.warn('Warning: Could not create uploads directory (expected in read-only Serverless environments):', err.message);
 }
 
 // Helper to read database
